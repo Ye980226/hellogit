@@ -1,12 +1,14 @@
-#type2  -  only use add_formula function with parameter
-        
-def run_formula(dv, param = None):
-    defult_param = {'t1':1,'t2':1,'t3':0,'t4':12}
-    if not param:
-        param = defult_param
-    
-    alpha167=dv.add_formula('alpha167','Ts_Sum(If(close_adj-Delay(close_adj,%s)>0,close_adj-Delay(close_adj,%s),%s),%s)'%(param['t1'],param['t2'],param['t3'],param['t4']),
-	add_data=True,
-	is_quarterly=False)
-    
+# encoding: utf-8 
+# 文件需要以utf-8格式编码
+# 文件名代表因子名称，需满足命名规范
+__author__ = 'leon' # 这里填下你的名字
+default_params = {'t1': 12} # 这里填写因子参数默认值，比如: {"t1": 10}
+params_description = {'t1': '暂无'} # 这里填写因子参数描述信息，比如: {"t1": "并没有用上的参数"}
+
+def run_formula(dv, params=default_params):
+    """
+    如果今天收盘价大于前一天收盘价，取值为今天收盘价与前一天收盘价的差，否则取0，将值按12天移动加总
+    """
+    alpha167 = dv.add_formula('alpha167', "Ts_Sum(If((close_adj-Delay(close_adj,1))>0,close_adj-Delay(close_adj,1),0),%s)"%(params['t1']),
+        is_quarterly=False, add_data=True)
     return alpha167

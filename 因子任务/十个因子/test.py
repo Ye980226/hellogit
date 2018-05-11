@@ -61,8 +61,8 @@ def test(factor,data):
             raise TypeError('error index type')
         print ('{} OK!'.format(factor))
 
-import leon1,leon2,leon3,leon4,leon5,leon6,leon7,leon8,leon9,leonA
+import leon1,leon2,leon3,leon4,leon5,leon6,leon7,leon8,leon9,leonA,leonB,leonC
 
 
-for f in [ 'leon1','leon2' ,'leon3' ,'leon4', 'leon5', 'leon6' ,'leon7' ,'leon8','leon9','leonA']:
+for f in [ 'leon1','leon2' ,'leon3' ,'leon4', 'leon5', 'leon6' ,'leon7' ,'leon8','leon9','leonA','leonB','leonC']:
     test(f, globals()[f].run_formula(dv))
