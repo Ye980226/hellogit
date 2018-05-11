@@ -1,0 +1,14 @@
+#120天滚动
+leon5 leon7 leon9 leonC pe leonA equal_weight
+leon5 leon7 leonC leon9 leonA turnover_ratio_J PE equal_weight
+leon5 leon9 leon7 turnover_ratio_J PE equal_weight
+leon5 PE leon7 turnover_ratio_J equal_weight
+leon5 PE leon7 turnover_ratio_J DVRAT_J equal_weight
+leon5 PE leon7 turnover_ratio_J DVRAT_J leon6 equal_weight
+leon7 leon5 turnover_ratio_J DVRAT_J FY12P equal_weight
+leon7 leon5 turnover_ratio_J DVRAT_J FY12P PE equal_weight
+leon5 PE turnover_ratio FY12P leon7 ir_weight
+#252天滚动
+leon7 DVRAT_J turnover_ratio_J FY12P leon5 equal_weight
+leon7 DVRAT_J turnover_ratio_J leon5 FY12P VOL10_J equal_weight
+leon7 DVRAT_J turnover_ratio_J leon5 FY12P VOL10_J VOL240 equal_weight
